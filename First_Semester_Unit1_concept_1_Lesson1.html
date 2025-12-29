@@ -65,6 +65,7 @@
   h1 {
     text-align: center;
     color: #60a5fa;
+    margin-bottom: 20px;
   }
 
   .question {
@@ -88,6 +89,12 @@
     border: none;
     outline: none;
     margin-top: 10px;
+    font-size: 18px;
+    height: 50px;
+    line-height: 1.5;
+    box-sizing: border-box;
+    text-align: right;
+    direction: rtl;
   }
 
   input[type=radio] {
@@ -128,16 +135,69 @@
     display: block; 
   }
 
-#infoBox strong {
-  display: block;              /* الحل الأساسي */
-  max-width: 100%;
-  white-space: normal;
-  word-break: break-word;
-  overflow-wrap: anywhere;
-}
+  /* تصميم أنيق لـ infoBox */
+  #infoBox {
+    display: none;
+    margin: 10px auto 20px;
+    background: rgba(59, 130, 246, 0.9);
+    color: white;
+    border-radius: 8px;
+    padding: 10px 15px;
+    font-size: 14px;
+    border: 2px solid white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    width: 90%;
+    max-width: 800px;
+  }
 
+  .info-row {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+  }
 
-  .show-correction #infoBox { display: block; }
+  .info-item {
+    margin: 5px 8px;
+    padding: 3px 8px;
+    text-align: center;
+    min-width: 150px;
+  }
+
+  #infoBox strong {
+    font-size: 15px;
+    color: #fef3c7;
+    font-weight: bold;
+    display: inline-block;
+    margin-right: 5px;
+  }
+
+  .show-correction #infoBox { 
+    display: block; 
+  }
+
+  #loading {
+    display: none;
+    margin: 15px 0;
+    color: #60a5fa;
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  #printArea {
+    font-family: "Segoe UI", Tahoma, sans-serif, "Arial", sans-serif;
+  }
+
+  /* تحسين عرض الاسم الطويل */
+  #imgName {
+    max-width: 200px;
+    word-break: keep-all;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+    vertical-align: middle;
+  }
 </style>
 </head>
 <body>
@@ -154,10 +214,14 @@
 
 <h1>H.W</h1>
 
+<div id="loading">⏳ جاري حفظ الصورة...</div>
+
 <div id="infoBox">
-  <div>اسم الطالب: <strong id="imgName"></strong></div>
-  <div>الدرجة: <strong id="imgScore"></strong></div>
-  <div>التاريخ والوقت: <strong id="imgDate"></strong></div>
+  <div class="info-row">
+    <div class="info-item">اسم الطالب: <strong id="imgName"></strong></div>
+    <div class="info-item">الدرجة: <strong id="imgScore"></strong></div>
+    <div class="info-item">التاريخ: <strong id="imgDate"></strong></div>
+  </div>
 </div>
 
 <div class="question">
@@ -188,13 +252,13 @@
 
 <button id="saveBtn" onclick="generateImage()">📸 حفظ الواجب كصورة</button>
 
-<a href="index.html" style="display:inline-block; margin-top:20px; text-decoration:none; color:#111827; background:#60a5fa; padding:12px 25px; border-radius:12px;">⬅ العودة إلى الرئيسية</a>
+<a href="index.html" id="backBtn" style="display:inline-block; margin-top:20px; text-decoration:none; color:#111827; background:#60a5fa; padding:12px 25px; border-radius:12px;">⬅ العودة إلى الرئيسية</a>
 
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
 <script>
-const LOCK_DAYS = 30;
+const LOCK_DAYS = 0;
 const STORAGE_KEY = "homework_locked";
 
 window.onload = function () {
@@ -235,8 +299,10 @@ function generateImage(){
     if(selected && selected.value === answers[q]){
       score++;
       fb.innerHTML="✔️ إجابة صحيحة";
+      fb.style.color = "#10b981";
     }else{
       fb.innerHTML="❌ إجابة خاطئة";
+      fb.style.color = "#ef4444";
     }
   });
 
@@ -244,25 +310,58 @@ function generateImage(){
   document.getElementById("imgScore").textContent = score + " / 3";
 
   const now = new Date();
-  document.getElementById("imgDate").textContent =
-    now.toLocaleDateString("ar-EG") + " - " + now.toLocaleTimeString("ar-EG");
+  // تنسيق التاريخ بشكل مختصر
+  const dateStr = `${now.getFullYear()}/${now.getMonth()+1}/${now.getDate()}`;
+  const timeStr = `${now.getHours()}:${now.getMinutes()}`;
+  document.getElementById("imgDate").textContent = dateStr + " " + timeStr;
 
   const area = document.getElementById("printArea");
   area.classList.add("show-correction");
 
-  html2canvas(area).then(canvas=>{
-    const link = document.createElement("a");
-    link.download = "homework.png";
-    link.href = canvas.toDataURL();
-    link.click();
+  // إظهار رسالة التحميل وإخفاء الأزرار
+  document.getElementById('loading').style.display = 'block';
+  document.getElementById('saveBtn').style.display = 'none';
+  document.getElementById('backBtn').style.display = 'none';
 
-    area.classList.remove("show-correction");
+  // إضافة تأخير لضمان عرض الاسم كاملاً
+  setTimeout(() => {
+    html2canvas(area, {
+      scale: 2,
+      useCORS: true,
+      backgroundColor: '#1e293b',
+      letterRendering: true,
+      allowTaint: true,
+      logging: false
+    }).then(canvas=>{
+      const link = document.createElement("a");
+      link.download = `واجب_${name}.png`;
+      link.href = canvas.toDataURL('image/png', 1.0);
+      link.click();
 
-    localStorage.setItem(STORAGE_KEY, Date.now());
-    lockHomework();
-  });
+      // استعادة الوضع الطبيعي
+      area.classList.remove("show-correction");
+      document.getElementById('loading').style.display = 'none';
+      document.getElementById('saveBtn').style.display = 'block';
+      document.getElementById('backBtn').style.display = 'inline-block';
+      
+      // إعادة تعيين الفيدباك للإجابات
+      document.querySelectorAll('.feedback').forEach(fb => {
+        fb.innerHTML = "";
+        fb.style.color = "";
+      });
+
+      localStorage.setItem(STORAGE_KEY, Date.now());
+      lockHomework();
+      
+    }).catch(error => {
+      console.error("خطأ في إنشاء الصورة:", error);
+      area.classList.remove("show-correction");
+      document.getElementById('loading').style.display = 'none';
+      document.getElementById('saveBtn').style.display = 'block';
+      document.getElementById('backBtn').style.display = 'inline-block';
+    });
+  }, 150);
 }
 </script>
-
 </body>
 </html>
