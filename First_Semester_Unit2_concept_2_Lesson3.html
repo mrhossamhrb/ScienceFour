@@ -3,199 +3,232 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Second Semester - الدرس الأول</title>
+<title>First_Semester_Unit2_concept_2_Lesson4</title>
+
 <style>
-  body {
-    font-family: "Segoe UI", Tahoma, sans-serif;
-    background: linear-gradient(to bottom, #1f2937, #3b82f6);
-    margin: 0;
-    padding: 0;
-    color: #f8fafc;
-    text-align: center;
-  }
+/* ====== General ====== */
+body{
+  font-family:"Segoe UI", Tahoma;
+  background:linear-gradient(to bottom,#1f2937,#3b82f6);
+  margin:0;
+  color:#f8fafc;
+  text-align:center;
+}
 
-  header {
-    background: linear-gradient(90deg, #3b82f6, #60a5fa);
-    color: white;
-    padding: 25px;
-    font-size: 28px;
-    font-weight: bold;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-  }
+header{
+  background:linear-gradient(90deg,#3b82f6,#60a5fa);
+  padding:25px;
+  font-size:28px;
+  font-weight:bold;
+  border-radius:0 0 20px 20px;
+}
 
-  section {
-    max-width: 900px;
-    margin: 30px auto;
-    padding: 25px;
-    background: #111827;
-    border-radius: 20px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-  }
+section, .container{
+  max-width:900px;
+  margin:25px auto;
+  background:#1e293b;
+  padding:25px;
+  border-radius:20px;
+}
 
-  section img {
-    width: 180px;
-    border-radius: 50%;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    margin-bottom: 15px;
-  }
+/* ====== Questions ====== */
+.question{
+  background:#3b4252;
+  padding:20px;
+  margin-bottom:15px;
+  border-radius:20px;
+  text-align:left;
+}
 
-  section h2 {
-    font-size: 26px;
-    margin-bottom: 10px;
-    color: #60a5fa;
-  }
+/* ====== Labels ====== */
+label{
+  display:block;
+  margin:10px 0;
+  cursor:pointer;
+  font-size:20px;
+}
 
-  section p {
-    font-size: 18px;
-    color: #cbd5e1;
-    margin-bottom: 20px;
-  }
+/* ====== Radio Buttons ====== */
+input[type="radio"]{
+  transform:scale(1.6);
+  margin-right:20px;
+  font-size:50px;
+}
 
-  .container {
-    max-width: 900px;
-    margin: 20px auto;
-    background: #1e293b;
-    padding: 25px;
-    border-radius: 20px;
-    box-shadow: 0 10px 25px rgba(0,0,0,.4);
-  }
+/* ====== Text Inputs ====== */
+input[type="text"]{
+  width:100%;
+  padding:15px;
+  border-radius:15px;
+  border:2px solid #60a5fa;
+  font-size:50px;
+  background:#eff6ff;
+  outline:none;
+}
 
-  h1 {
-    text-align: center;
-    color: #60a5fa;
-  }
+input[type="text"]:focus{
+  border-color:#00ec18;
+  box-shadow:0 0 6px rgba(0,236,24,0.6);
+}
 
-  .question {
-    margin-bottom: 20px;
-    padding: 20px;
-    background: #3b4252;
-    border-radius: 15px;
-    text-align: left;
-  }
+/* Inline input */
+.inline{
+  width:160px;
+  padding:10px;
+  border-radius:10px;
+  border:2px solid #60a5fa;
+  font-size:100px;
+}
 
-  label { 
-    display: block; 
-    margin: 8px 0;
-    cursor: pointer;
-  }
+/* ====== Button ====== */
+button{
+  width:100%;
+  padding:15px;
+  font-size:50px;
+  border:none;
+  border-radius:15px;
+  background:linear-gradient(90deg,#3b82f6,#60a5fa);
+  cursor:pointer;
+  color:white;
+}
 
-  input[type=text] {
-    width: 100%;
-    padding: 12px;
-    border-radius: 10px;
-    border: none;
-    outline: none;
-    margin-top: 10px;
-  }
+button:hover{
+  opacity:0.9;
+}
 
-  input[type=radio] {
-    margin-left: 10px;
-    cursor: pointer;
-  }
+/* ====== Feedback ====== */
+.feedback{
+  display:none;
+  font-weight:bold;
+  margin-top:8px;
+}
 
-  button {
-    width: 100%;
-    padding: 15px;
-    font-size: 20px;
-    background: linear-gradient(90deg, #3b82f6, #60a5fa);
-    color: white;
-    border: none;
-    border-radius: 15px;
-    cursor: pointer;
-    transition: 0.3s;
-    margin-top: 15px;
-  }
+.show .feedback{
+  display:block;
+}
 
-  button:hover {
-    transform: translateY(-3px) scale(1.02);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
-  }
+/* ====== Info Box ====== */
+#infoBox{
+  display:none;
+  background:#60a5fa;
+  color:#111827;
+  padding:15px;
+  border-radius:15px;
+  margin-bottom:15px;
+}
 
-  button:disabled {
-    background: #555;
-    cursor: not-allowed;
-  }
+.show #infoBox{
+  display:block;
+}
 
-  .feedback {
-    display: none;
-    font-weight: bold;
-    margin-top: 10px;
-  }
+.radio-text{
+  font-size:30px;
+  font-weight:bold;
+}
 
-  .show-correction .feedback { 
-    display: block; 
-  }
-
-  #infoBox {
-    display: none;
-    margin-bottom: 20px;
-    padding: 15px;
-    border-radius: 15px;
-    background: #60a5fa;
-    color: #111827;
-    font-size: 18px;
-  }
-
-  .show-correction #infoBox { display: block; }
 </style>
+
 </head>
+
 <body>
 
-<header>Second Semester - الدرس الأول</header>
+<header>First_Semester_Unit2_concept_2_Lesson4</header>
 
 <section>
-    <img src="First_Semester.jpg" alt="صورة الدرس">
-    <h2>Second_Semester_Unit4_concept_1_Lesson1</h2>
-    <p>حل الواجب التالي بعناية ثم احفظ نتيجتك كصورة!</p>
+<h2>First_Semester_Unit2_concept_2_Lesson4</h2>
+<p>حل الواجب ثم احفظه كصورة 📸</p>
 </section>
 
 <div class="container" id="printArea">
 
-<h1>H.W</h1>
+<h2>Homework</h2>
 
 <div id="infoBox">
-  <div>اسم الطالب: <strong id="imgName"></strong></div>
-  <div>الدرجة: <strong id="imgScore"></strong></div>
-  <div>التاريخ والوقت: <strong id="imgDate"></strong></div>
+الاسم: <b id="imgName"></b><br>
+الدرجة: <b id="imgScore"></b><br>
+التاريخ: <b id="imgDate"></b>
 </div>
 
 <div class="question">
-<label>اسم الطالب:</label>
+اسم الطالب:
 <input type="text" id="studentName">
+  <button id="saveBtn" onclick="generateImage()">📸 حفظ الواجب كصورة</button>
 </div>
+<!-- ## -->
+<div class="question"><h3>8+8+8+8+8+8+8=</h3>
+<label><input type="radio" name="q1" value="a"><span class="radio-text">7 x 8</span></label>
+<label><input type="radio" name="q1" value="b"><span class="radio-text">8+7</span></label>
+<label><input type="radio" name="q1" value="c"><span class="radio-text">8x8</span></label>
+<label><input type="radio" name="q1" value="d"><span class="radio-text">7 x 7</span></label><div class="feedback" id='f1'></div></div>
+<div class="question"><h3>24+6=</h3>
+<label><input type="radio" name="q2" value="a"><span class="radio-text">2+5</span></label>
+<label><input type="radio" name="q2" value="b"><span class="radio-text">10x2</span></label>
+<label><input type="radio" name="q2" value="c"><span class="radio-text">2x5</span></label>
+<label><input type="radio" name="q2" value="d"><span class="radio-text">4x6</span></label><div class="feedback" id='f2'></div></div>
+<div class="question"><h3>Eight teams of five players, how many players are there?</h3>
+<label><input type="radio" name="q3" value="a"><span class="radio-text">8÷5</span></label>
+<label><input type="radio" name="q3" value="b"><span class="radio-text">8-5</span></label>
+<label><input type="radio" name="q3" value="c"><span class="radio-text">8+5</span></label>
+<label><input type="radio" name="q3" value="d"><span class="radio-text">8x5</span></label><div class="feedback" id='f3'></div></div>
+<div class="question"><h3>is a multiple of 2</h3>
+<label><input type="radio" name="q4" value="a"><span class="radio-text">18</span></label>
+<label><input type="radio" name="q4" value="b"><span class="radio-text">3</span></label>
+<label><input type="radio" name="q4" value="c"><span class="radio-text">9</span></label>
+<label><input type="radio" name="q4" value="d"><span class="radio-text">201</span></label><div class="feedback" id='f4'></div></div>
+<div class="question"><h3>is a common multiple of 5 and 10</h3>
+<label><input type="radio" name="q5" value="a"><span class="radio-text">15</span></label>
+<label><input type="radio" name="q5" value="b"><span class="radio-text">30</span></label>
+<label><input type="radio" name="q5" value="c"><span class="radio-text">45</span></label>
+<label><input type="radio" name="q5" value="d"><span class="radio-text">5</span></label><div class="feedback" id='f5'></div></div>
+<div class="question"><h3>Number 6 has factors.</h3>
+<label><input type="radio" name="q6" value="a"><span class="radio-text">6</span></label>
+<label><input type="radio" name="q6" value="b"><span class="radio-text">5</span></label>
+<label><input type="radio" name="q6" value="c"><span class="radio-text">4</span></label>
+<label><input type="radio" name="q6" value="d"><span class="radio-text">3</span></label><div class="feedback" id='f6'></div></div>
+<div class="question"><h3>6+0=3x………….</h3>
+<label><input type="radio" name="q7" value="a"><span class="radio-text">0</span></label>
+<label><input type="radio" name="q7" value="b"><span class="radio-text">2</span></label>
+<label><input type="radio" name="q7" value="c"><span class="radio-text">6</span></label>
+<label><input type="radio" name="q7" value="d"><span class="radio-text">9</span></label><div class="feedback" id='f7'></div></div>
+<div class="question"><h3>5+5+5 ………...4 x 4</h3>
+<label><input type="radio" name="q8" value="a"><span class="radio-text">></span></label>
+<label><input type="radio" name="q8" value="b"><span class="radio-text"><</span></label>
+<label><input type="radio" name="q8" value="c"><span class="radio-text">=</span></label>
+<label><input type="radio" name="q8" value="d"><span class="radio-text">otherwise</span></label><div class="feedback" id='f8'></div></div>
+<div class="question"><h3>9 x 0 = 9- ...........</h3>
+<label><input type="radio" name="q9" value="a"><span class="radio-text">0</span></label>
+<label><input type="radio" name="q9" value="b"><span class="radio-text">1</span></label>
+<label><input type="radio" name="q9" value="c"><span class="radio-text">9</span></label>
+<label><input type="radio" name="q9" value="d"><span class="radio-text">otherwise</span></label><div class="feedback" id='f9'></div></div>
+<div class="question"><h3>What number will the minute hand point to when 40 minutes have passed?</h3>
+<label><input type="radio" name="q10" value="a"><span class="radio-text">40</span></label>
+<label><input type="radio" name="q10" value="b"><span class="radio-text">8</span></label>
+<label><input type="radio" name="q10" value="c"><span class="radio-text">5</span></label>
+<label><input type="radio" name="q10" value="d"><span class="radio-text">12</span></label><div class="feedback" id='f10'></div></div>
+<!-- ## -->
 
-<div class="question">
-<h3>1) Helium is lighter than air</h3>
-<label><input type="radio" name="q1" value="a"> a physical property</label>
-<label><input type="radio" name="q1" value="b"> a chemical property</label>
-<div class="feedback" id="f1"></div>
-</div>
-
-<div class="question">
-<h3>2) Blimps are filled with</h3>
-<label><input type="radio" name="q2" value="a"> oxygen</label>
-<label><input type="radio" name="q2" value="b"> helium</label>
-<div class="feedback" id="f2"></div>
-</div>
-
-<div class="question">
-<h3>3) Steel is used in hammers because it is</h3>
-<label><input type="radio" name="q3" value="a"> flexible</label>
-<label><input type="radio" name="q3" value="b"> hard</label>
-<div class="feedback" id="f3"></div>
-</div>
-
-<button id="saveBtn" onclick="generateImage()">📸 حفظ الواجب كصورة</button>
-
-<a href="index.html" style="display:inline-block; margin-top:20px; text-decoration:none; color:#111827; background:#60a5fa; padding:12px 25px; border-radius:12px;">⬅ العودة إلى الرئيسية</a>
 
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+
 <script>
-const LOCK_DAYS = 30;
+
+const answers = {
+  q1: "a",   
+  q2: "b",   
+  q3: "d",   
+  q4: "a",   
+  q5: "b",  
+  q6: "a",  
+  q7: "b",   
+  q8: "b",  
+  q9: "c",  
+  q10: "b"   
+};
+
+
+  const LOCK_DAYS = 0;
 const STORAGE_KEY = "homework_locked";
 
 window.onload = function () {
@@ -218,48 +251,64 @@ function lockHomework() {
   document.querySelectorAll("input").forEach(el => el.disabled = true);
 }
 
-function generateImage(){
-  if (document.getElementById("saveBtn").disabled) return;
+
+
+  function generateImage(){
 
   const name = document.getElementById("studentName").value.trim();
   if(!name){
-    alert("اكتب اسم الطالب");
+    alert("اكتب الاسم");
     return;
   }
 
   let score = 0;
-  const answers = { q1:"a", q2:"b", q3:"b" };
 
-  Object.keys(answers).forEach((q,i)=>{
-    const selected = document.querySelector(`input[name="${q}"]:checked`);
-    const fb = document.getElementById("f"+(i+1));
-    if(selected && selected.value === answers[q]){
-      score++;
-      fb.innerHTML="✔️ إجابة صحيحة";
-    }else{
-      fb.innerHTML="❌ إجابة خاطئة";
+  // تصحيح الأسئلة
+// تصحيح الأسئلة
+for (let q in answers) {
+
+  const selected = document.querySelector(`input[name="${q}"]:checked`);
+  const feedback = document.getElementById("f" + q.replace("q",""));
+
+  // الحصول على نص الإجابة الصحيحة
+  const correctInput = document.querySelector(
+    `input[name="${q}"][value="${answers[q]}"]`
+  );
+  const correctText = correctInput
+    ? correctInput.parentElement.textContent.trim()
+    : "";
+
+    
+  if (selected && selected.value === answers[q]) {
+    score++;
+    if (feedback) {
+      feedback.innerHTML = "✔ Correct";
+      feedback.style.color = "lime";
     }
-  });
+  } else {
+    if (feedback) {
+      feedback.innerHTML = `✖ Mistake<br>✔  The Right Answer: <strong>${correctText}</strong>`;
+      feedback.style.color = "#ffb703";
+    }
+  }
+}
 
+
+  // عرض البيانات
   document.getElementById("imgName").textContent = name;
-  document.getElementById("imgScore").textContent = score + " / 3";
-
-  const now = new Date();
+  document.getElementById("imgScore").textContent = score + " / 10";
   document.getElementById("imgDate").textContent =
-    now.toLocaleDateString("ar-EG") + " - " + now.toLocaleTimeString("ar-EG");
+    new Date().toLocaleString("ar-EG");
 
   const area = document.getElementById("printArea");
-  area.classList.add("show-correction");
+  area.classList.add("show");
 
   html2canvas(area).then(canvas=>{
-    const link = document.createElement("a");
-    link.download = "homework.png";
-    link.href = canvas.toDataURL();
-    link.click();
-
-    area.classList.remove("show-correction");
-
-    localStorage.setItem(STORAGE_KEY, Date.now());
+    const a = document.createElement("a");
+    a.download = "homework.png";
+    a.href = canvas.toDataURL();
+    a.click();
+    area.classList.remove("show");
     lockHomework();
   });
 }
