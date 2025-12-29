@@ -1,367 +1,372 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Second_Semester_Unit4_concept_1_Lesson1</title>
-<style>
-  body {
-    font-family: "Segoe UI", Tahoma, sans-serif;
-    background: linear-gradient(to bottom, #1f2937, #3b82f6);
-    margin: 0;
-    padding: 0;
-    color: #f8fafc;
-    text-align: center;
-  }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Second_Semester_Unit4_concept_1_Lesson1</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Tahoma, sans-serif;
+      background: linear-gradient(to bottom, #1f2937, #3b82f6);
+      margin: 0;
+      padding: 0;
+      color: #f8fafc;
+      text-align: center;
+    }
 
-  header {
-    background: linear-gradient(90deg, #3b82f6, #60a5fa);
-    color: white;
-    padding: 25px;
-    font-size: 28px;
-    font-weight: bold;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-  }
+    header {
+      background: linear-gradient(90deg, #3b82f6, #60a5fa);
+      color: white;
+      padding: 25px;
+      font-size: 28px;
+      font-weight: bold;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+    }
 
-  section {
-    max-width: 900px;
-    margin: 30px auto;
-    padding: 25px;
-    background: #111827;
-    border-radius: 20px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-  }
+    section {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 25px;
+      background: #111827;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    }
 
-  section img {
-    width: 180px;
-    border-radius: 50%;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    margin-bottom: 15px;
-  }
+    section img {
+      width: 180px;
+      border-radius: 50%;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      margin-bottom: 15px;
+    }
 
-  section h2 {
-    font-size: 26px;
-    margin-bottom: 10px;
-    color: #60a5fa;
-  }
+    section h2 {
+      font-size: 26px;
+      margin-bottom: 10px;
+      color: #60a5fa;
+    }
 
-  section p {
-    font-size: 18px;
-    color: #cbd5e1;
-    margin-bottom: 20px;
-  }
+    section p {
+      font-size: 18px;
+      color: #cbd5e1;
+      margin-bottom: 20px;
+    }
 
-  .container {
-    max-width: 900px;
-    margin: 20px auto;
-    background: #1e293b;
-    padding: 25px;
-    border-radius: 20px;
-    box-shadow: 0 10px 25px rgba(0,0,0,.4);
-  }
+    .container {
+      max-width: 900px;
+      margin: 20px auto;
+      background: #1e293b;
+      padding: 25px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, .4);
+    }
 
-  h1 {
-    text-align: center;
-    color: #60a5fa;
-    margin-bottom: 20px;
-  }
+    h1 {
+      text-align: center;
+      color: #60a5fa;
+      margin-bottom: 20px;
+    }
 
-  .question {
-    margin-bottom: 20px;
-    padding: 20px;
-    background: #3b4252;
-    border-radius: 15px;
-    text-align: left;
-  }
+    .question {
+      margin-bottom: 20px;
+      padding: 20px;
+      background: #3b4252;
+      border-radius: 15px;
+      text-align: left;
+    }
 
-  label { 
-    display: block; 
-    margin: 8px 0;
-    cursor: pointer;
-  }
+    label {
+      display: block;
+      margin: 8px 0;
+      cursor: pointer;
+    }
 
-  input[type=text] {
-    width: 100%;
-    padding: 12px;
-    border-radius: 10px;
-    border: none;
-    outline: none;
-    margin-top: 10px;
-    font-size: 18px;
-    height: 50px;
-    line-height: 1.5;
-    box-sizing: border-box;
-    text-align: right;
-    direction: rtl;
-  }
+    input[type=text] {
+      width: 100%;
+      padding: 12px;
+      border-radius: 10px;
+      border: none;
+      outline: none;
+      margin-top: 10px;
+      font-size: 18px;
+      height: 50px;
+      line-height: 1.5;
+      box-sizing: border-box;
+      text-align: right;
+      direction: rtl;
+    }
 
-  input[type=radio] {
-    margin-left: 10px;
-    cursor: pointer;
-  }
+    input[type=radio] {
+      margin-left: 10px;
+      cursor: pointer;
+    }
 
-  button {
-    width: 100%;
-    padding: 15px;
-    font-size: 20px;
-    background: linear-gradient(90deg, #3b82f6, #60a5fa);
-    color: white;
-    border: none;
-    border-radius: 15px;
-    cursor: pointer;
-    transition: 0.3s;
-    margin-top: 15px;
-  }
+    button {
+      width: 100%;
+      padding: 15px;
+      font-size: 20px;
+      background: linear-gradient(90deg, #3b82f6, #60a5fa);
+      color: white;
+      border: none;
+      border-radius: 15px;
+      cursor: pointer;
+      transition: 0.3s;
+      margin-top: 15px;
+    }
 
-  button:hover {
-    transform: translateY(-3px) scale(1.02);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
-  }
+    button:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    }
 
-  button:disabled {
-    background: #555;
-    cursor: not-allowed;
-  }
+    button:disabled {
+      background: #555;
+      cursor: not-allowed;
+    }
 
-  .feedback {
-    display: none;
-    font-weight: bold;
-    margin-top: 10px;
-  }
+    .feedback {
+      display: none;
+      font-weight: bold;
+      margin-top: 10px;
+    }
 
-  .show-correction .feedback { 
-    display: block; 
-  }
+    .show-correction .feedback {
+      display: block;
+    }
 
-  /* تصميم أنيق لـ infoBox */
-  #infoBox {
-    display: none;
-    margin: 10px auto 20px;
-    background: rgba(59, 130, 246, 0.9);
-    color: white;
-    border-radius: 8px;
-    padding: 10px 15px;
-    font-size: 14px;
-    border: 2px solid white;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-    width: 90%;
-    max-width: 800px;
-  }
+    /* تصميم أنيق لـ infoBox */
+    #infoBox {
+      display: none;
+      margin: 10px auto 20px;
+      background: rgba(59, 130, 246, 0.9);
+      color: white;
+      border-radius: 8px;
+      padding: 10px 15px;
+      font-size: 14px;
+      border: 2px solid white;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      width: 90%;
+      max-width: 800px;
+    }
 
-  .info-row {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-  }
+    .info-row {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-wrap: wrap;
+    }
 
-  .info-item {
-    margin: 5px 8px;
-    padding: 3px 8px;
-    text-align: center;
-    min-width: 150px;
-  }
+    .info-item {
+      margin: 5px 8px;
+      padding: 3px 8px;
+      text-align: center;
+      min-width: 150px;
+    }
 
-  #infoBox strong {
-    font-size: 15px;
-    color: #fef3c7;
-    font-weight: bold;
-    display: inline-block;
-    margin-right: 5px;
-  }
+    #infoBox strong {
+      font-size: 15px;
+      color: #fef3c7;
+      font-weight: bold;
+      display: inline-block;
+      margin-right: 5px;
+    }
 
-  .show-correction #infoBox { 
-    display: block; 
-  }
+    .show-correction #infoBox {
+      display: block;
+    }
 
-  #loading {
-    display: none;
-    margin: 15px 0;
-    color: #60a5fa;
-    font-size: 18px;
-    font-weight: bold;
-  }
+    #loading {
+      display: none;
+      margin: 15px 0;
+      color: #60a5fa;
+      font-size: 18px;
+      font-weight: bold;
+    }
 
-  #printArea {
-    font-family: "Segoe UI", Tahoma, sans-serif, "Arial", sans-serif;
-  }
+    #printArea {
+      font-family: "Segoe UI", Tahoma, sans-serif, "Arial", sans-serif;
+    }
 
-  /* تحسين عرض الاسم الطويل */
-  #imgName {
-    max-width: 200px;
-    word-break: keep-all;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: inline-block;
-    vertical-align: middle;
-  }
-</style>
+    /* تحسين عرض الاسم الطويل */
+    #imgName {
+      max-width: 200px;
+      word-break: keep-all;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: inline-block;
+      vertical-align: middle;
+    }
+  </style>
 </head>
+
 <body>
 
-<header>Second_Semester_Unit4_concept_1_Lesson1</header>
+  <header>Second_Semester_Unit4_concept_1_Lesson1</header>
 
-<section>
+  <section>
     <img src="First_Semester.jpg" alt="صورة الدرس">
     <h2>Second_Semester_Unit4_concept_1_Lesson1</h2>
     <p>حل الواجب التالي بعناية ثم احفظ نتيجتك كصورة!</p>
-</section>
+  </section>
 
-<div class="container" id="printArea">
+  <div class="container" id="printArea">
 
-<h1>H.W</h1>
+    <h1>H.W</h1>
 
-<div id="loading">⏳ جاري حفظ الصورة...</div>
+    <div id="loading">⏳ جاري حفظ الصورة...</div>
 
-<div id="infoBox">
-  <div class="info-row">
-    <div class="info-item">اسم الطالب: <strong id="imgName"></strong></div>
-    <div class="info-item">الدرجة: <strong id="imgScore"></strong></div>
-    <div class="info-item">التاريخ: <strong id="imgDate"></strong></div>
+    <div id="infoBox">
+      <div class="info-row">
+        <div class="info-item">اسم الطالب: <strong id="imgName"></strong></div>
+        <div class="info-item">الدرجة: <strong id="imgScore"></strong></div>
+        <div class="info-item">التاريخ: <strong id="imgDate"></strong></div>
+      </div>
+    </div>
+
+    <div class="question">
+      <label>اسم الطالب:</label>
+      <input type="text" id="studentName">
+    </div>
+
+    <div class="question">
+      <h3>1) Helium is lighter than air</h3>
+      <label><input type="radio" name="q1" value="a"> a physical property</label>
+      <label><input type="radio" name="q1" value="b"> a chemical property</label>
+      <div class="feedback" id="f1"></div>
+    </div>
+
+    <div class="question">
+      <h3>2) Blimps are filled with</h3>
+      <label><input type="radio" name="q2" value="a"> oxygen</label>
+      <label><input type="radio" name="q2" value="b"> helium</label>
+      <div class="feedback" id="f2"></div>
+    </div>
+
+
+
+    <button id="saveBtn" onclick="generateImage()">📸 حفظ الواجب كصورة</button>
+
+    <a href="index.html" id="backBtn"
+      style="display:inline-block; margin-top:20px; text-decoration:none; color:#111827; background:#60a5fa; padding:12px 25px; border-radius:12px;">⬅
+      العودة إلى الرئيسية</a>
+
   </div>
-</div>
 
-<div class="question">
-<label>اسم الطالب:</label>
-<input type="text" id="studentName">
-</div>
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+  <script>
+    const LOCK_DAYS = 0;
+    const STORAGE_KEY = "homework_locked";
 
-<div class="question">
-<h3>1) Helium is lighter than air</h3>
-<label><input type="radio" name="q1" value="a"> a physical property</label>
-<label><input type="radio" name="q1" value="b"> a chemical property</label>
-<div class="feedback" id="f1"></div>
-</div>
+    window.onload = function () {
+      const lockData = localStorage.getItem(STORAGE_KEY);
+      if (lockData) {
+        const savedTime = parseInt(lockData, 10);
+        const now = Date.now();
+        const diffDays = (now - savedTime) / (1000 * 60 * 60 * 24);
+        if (diffDays < LOCK_DAYS) {
+          lockHomework();
+        } else {
+          localStorage.removeItem(STORAGE_KEY);
+        }
+      }
+    };
 
-<div class="question">
-<h3>2) Blimps are filled with</h3>
-<label><input type="radio" name="q2" value="a"> oxygen</label>
-<label><input type="radio" name="q2" value="b"> helium</label>
-<div class="feedback" id="f2"></div>
-</div>
-
-<div class="question">
-<h3>3) Steel is used in hammers because it is</h3>
-<label><input type="radio" name="q3" value="a"> flexible</label>
-<label><input type="radio" name="q3" value="b"> hard</label>
-<div class="feedback" id="f3"></div>
-</div>
-
-<button id="saveBtn" onclick="generateImage()">📸 حفظ الواجب كصورة</button>
-
-<a href="index.html" id="backBtn" style="display:inline-block; margin-top:20px; text-decoration:none; color:#111827; background:#60a5fa; padding:12px 25px; border-radius:12px;">⬅ العودة إلى الرئيسية</a>
-
-</div>
-
-<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
-<script>
-const LOCK_DAYS = 0;
-const STORAGE_KEY = "homework_locked";
-
-window.onload = function () {
-  const lockData = localStorage.getItem(STORAGE_KEY);
-  if (lockData) {
-    const savedTime = parseInt(lockData, 10);
-    const now = Date.now();
-    const diffDays = (now - savedTime) / (1000 * 60 * 60 * 24);
-    if (diffDays < LOCK_DAYS) {
-      lockHomework();
-    } else {
-      localStorage.removeItem(STORAGE_KEY);
+    function lockHomework() {
+      document.getElementById("saveBtn").disabled = true;
+      document.getElementById("saveBtn").innerText = "✔️ تم تسليم الواجب";
+      document.querySelectorAll("input").forEach(el => el.disabled = true);
     }
-  }
-};
 
-function lockHomework() {
-  document.getElementById("saveBtn").disabled = true;
-  document.getElementById("saveBtn").innerText = "✔️ تم تسليم الواجب";
-  document.querySelectorAll("input").forEach(el => el.disabled = true);
-}
+    function generateImage() {
+      if (document.getElementById("saveBtn").disabled) return;
 
-function generateImage(){
-  if (document.getElementById("saveBtn").disabled) return;
+      const name = document.getElementById("studentName").value.trim();
+      if (!name) {
+        alert("اكتب اسم الطالب");
+        return;
+      }
 
-  const name = document.getElementById("studentName").value.trim();
-  if(!name){
-    alert("اكتب اسم الطالب");
-    return;
-  }
+      let score = 0;
+      const answers =
+      {
+        q1: "a",
+        q2: "b",
+      };
 
-  let score = 0;
-  const answers = { q1:"a", q2:"b", q3:"b" };
 
-  Object.keys(answers).forEach((q,i)=>{
-    const selected = document.querySelector(`input[name="${q}"]:checked`);
-    const fb = document.getElementById("f"+(i+1));
-    if(selected && selected.value === answers[q]){
-      score++;
-      fb.innerHTML="✔️ إجابة صحيحة";
-      fb.style.color = "#10b981";
-    }else{
-      fb.innerHTML="❌ إجابة خاطئة";
-      fb.style.color = "#ef4444";
-    }
-  });
-
-  document.getElementById("imgName").textContent = name;
-  document.getElementById("imgScore").textContent = score + " / 3";
-
-  const now = new Date();
-  // تنسيق التاريخ بشكل مختصر
-  const dateStr = `${now.getFullYear()}/${now.getMonth()+1}/${now.getDate()}`;
-  const timeStr = `${now.getHours()}:${now.getMinutes()}`;
-  document.getElementById("imgDate").textContent = dateStr + " " + timeStr;
-
-  const area = document.getElementById("printArea");
-  area.classList.add("show-correction");
-
-  // إظهار رسالة التحميل وإخفاء الأزرار
-  document.getElementById('loading').style.display = 'block';
-  document.getElementById('saveBtn').style.display = 'none';
-  document.getElementById('backBtn').style.display = 'none';
-
-  // إضافة تأخير لضمان عرض الاسم كاملاً
-  setTimeout(() => {
-    html2canvas(area, {
-      scale: 2,
-      useCORS: true,
-      backgroundColor: '#1e293b',
-      letterRendering: true,
-      allowTaint: true,
-      logging: false
-    }).then(canvas=>{
-      const link = document.createElement("a");
-      link.download = `واجب_${name}.png`;
-      link.href = canvas.toDataURL('image/png', 1.0);
-      link.click();
-
-      // استعادة الوضع الطبيعي
-      area.classList.remove("show-correction");
-      document.getElementById('loading').style.display = 'none';
-      document.getElementById('saveBtn').style.display = 'block';
-      document.getElementById('backBtn').style.display = 'inline-block';
-      
-      // إعادة تعيين الفيدباك للإجابات
-      document.querySelectorAll('.feedback').forEach(fb => {
-        fb.innerHTML = "";
-        fb.style.color = "";
+      Object.keys(answers).forEach((q, i) => {
+        const selected = document.querySelector(`input[name="${q}"]:checked`);
+        const fb = document.getElementById("f" + (i + 1));
+        if (selected && selected.value === answers[q]) {
+          score++;
+          fb.innerHTML = "✔️ إجابة صحيحة";
+          fb.style.color = "#10b981";
+        } else {
+          fb.innerHTML = "❌ إجابة خاطئة";
+          fb.style.color = "#ef4444";
+        }
       });
 
-      localStorage.setItem(STORAGE_KEY, Date.now());
-      lockHomework();
-      
-    }).catch(error => {
-      console.error("خطأ في إنشاء الصورة:", error);
-      area.classList.remove("show-correction");
-      document.getElementById('loading').style.display = 'none';
-      document.getElementById('saveBtn').style.display = 'block';
-      document.getElementById('backBtn').style.display = 'inline-block';
-    });
-  }, 150);
-}
-</script>
+      document.getElementById("imgName").textContent = name;
+      document.getElementById("imgScore").textContent = score + " / 3";
+
+      const now = new Date();
+      // تنسيق التاريخ بشكل مختصر
+      const dateStr = `${now.getFullYear()}/${now.getMonth() + 1}/${now.getDate()}`;
+      const timeStr = `${now.getHours()}:${now.getMinutes()}`;
+      document.getElementById("imgDate").textContent = dateStr + " " + timeStr;
+
+      const area = document.getElementById("printArea");
+      area.classList.add("show-correction");
+
+      // إظهار رسالة التحميل وإخفاء الأزرار
+      document.getElementById('loading').style.display = 'block';
+      document.getElementById('saveBtn').style.display = 'none';
+      document.getElementById('backBtn').style.display = 'none';
+
+      // إضافة تأخير لضمان عرض الاسم كاملاً
+      setTimeout(() => {
+        html2canvas(area, {
+          scale: 2,
+          useCORS: true,
+          backgroundColor: '#1e293b',
+          letterRendering: true,
+          allowTaint: true,
+          logging: false
+        }).then(canvas => {
+          const link = document.createElement("a");
+          link.download = `واجب_${name}.png`;
+          link.href = canvas.toDataURL('image/png', 1.0);
+          link.click();
+
+          // استعادة الوضع الطبيعي
+          area.classList.remove("show-correction");
+          document.getElementById('loading').style.display = 'none';
+          document.getElementById('saveBtn').style.display = 'block';
+          document.getElementById('backBtn').style.display = 'inline-block';
+
+          // إعادة تعيين الفيدباك للإجابات
+          document.querySelectorAll('.feedback').forEach(fb => {
+            fb.innerHTML = "";
+            fb.style.color = "";
+          });
+
+          localStorage.setItem(STORAGE_KEY, Date.now());
+          lockHomework();
+
+        }).catch(error => {
+          console.error("خطأ في إنشاء الصورة:", error);
+          area.classList.remove("show-correction");
+          document.getElementById('loading').style.display = 'none';
+          document.getElementById('saveBtn').style.display = 'block';
+          document.getElementById('backBtn').style.display = 'inline-block';
+        });
+      }, 150);
+    }
+  </script>
 </body>
+
 </html>
